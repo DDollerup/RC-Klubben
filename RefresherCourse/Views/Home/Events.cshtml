@@ -1,0 +1,20 @@
+﻿@model List<Event>
+@{
+    ViewBag.Title = "Events";
+}
+
+<div class="row">
+    @foreach (Event item in Model)
+    {
+        <div class="col-md-6">
+            <h5>
+                @item.Title
+            </h5>
+            <span>@item.Date.ToShortDateString()</span>
+            <p>
+                @item.Content <a href="/Home/ShowEvent/@item.ID">Læs Mere</a>
+            </p>
+            <hr />
+        </div>
+    }
+</div>

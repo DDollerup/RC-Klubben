@@ -1,0 +1,6 @@
+﻿@model List<Event>
+
+@foreach (Event item in Model)
+{
+    <li><a href="/Home/ShowEvent/@item.ID">@item.Title</a></li>
+}

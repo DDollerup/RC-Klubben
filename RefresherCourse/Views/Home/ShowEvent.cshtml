@@ -1,0 +1,17 @@
+﻿@model Event
+@{
+    ViewBag.Title = "Show Event";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>@Model.Title</h2>
+        <p>
+            @Model.Content
+        </p>
+    </div>
+    <div class="col-md-6">
+        <img src="~/Content/Images/Events/@Model.Image" class="img-fluid" />
+    </div>
+</div>
+

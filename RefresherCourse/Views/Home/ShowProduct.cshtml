@@ -1,0 +1,23 @@
+﻿@model Product
+@{
+    ViewBag.Title = "Show Product - " + Model.Title;
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>@Model.Title</h2>
+        <span>Mærke: @Model.Manufacturer</span>
+        <br />
+        <span>Type: @Model.CategoryID</span>
+        <br />
+        <span>Brændstof: @Model.Fuel</span>
+        <br />
+        <br />
+        <p>
+            @Model.Content
+        </p>
+    </div>
+    <div class="col-md-6">
+        <img src="~/Content/Images/Products/@Model.Image" class="img-fluid" />
+    </div>
+</div>

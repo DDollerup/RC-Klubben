@@ -1,0 +1,6 @@
+﻿@model List<Product>
+
+@foreach (Product item in Model)
+{
+    <li><a href="/Home/ShowProduct/@item.ID">@item.Title</a></li>
+}

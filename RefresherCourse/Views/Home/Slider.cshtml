@@ -1,0 +1,8 @@
+﻿@model List<Slider>
+
+<div class="slider">
+    @foreach (Slider item in Model)
+    {
+        <img src="~/Content/Images/Slider/@item.Image" alt="@item.Alt" />
+    }
+</div>

@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Plugins/Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/BxSlider/dist/jquery.bxslider.css" rel="stylesheet" />
+    <link href="~/Content/CSS/Main.css" rel="stylesheet" />
+</head>
+<body>
+
+    <header class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1><span>RC-</span>Klubben</h1>
+                </div>
+                <div class="col-md-4">
+                    <form action="/Home/Search" method="post">
+                        <input type="text" placeholder="Søgeord" name="searchQuery" required /><input type="submit" value="Søg" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="container-fluid">
+        <div class="container">
+            <ul>
+                <li><a href="/Home/Index">Forside</a></li>
+                @Html.Action("CategoryLinks")
+                <li><a href="/Home/Events">Events</a></li>
+                <li><a href="/Home/About">Om RC-Klubben</a></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </nav>
+    <main class="container">
+        @RenderBody()
+    </main>
+    <footer class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>Nyeste Produkter</h3>
+                    <ul class="footerList">
+                        @Html.Action("NewestProducts")
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Nyeste Events</h3>
+                    <ul class="footerList">
+                        @Html.Action("NewestEvents")
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>Tilmeld Nyhedsbrev</h3>
+                    <span>
+                        Her kan du tilmelde dig sidens nyhedsbrev. Indtast en email og tryk på "Tilmeld" knappen.
+                    </span>
+                    <form>
+                        <input type="email" placeholder="Email" /><input type="submit" value="Tilmeld" />
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="~/Content/Plugins/Bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/Plugins/BxSlider/dist/jquery.bxslider.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slider').bxSlider();
+        });
+    </script>
+</body>
+</html>
